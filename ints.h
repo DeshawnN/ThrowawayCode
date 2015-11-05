@@ -149,18 +149,20 @@ int conversion()
 	}
 
 	// Compares data types
-	if (type1 == "bool" && type2 == "char" || type1 == "bool" && type2 == "int" || type1 == "bool" && type2 == "double"||
-		type1 == "char" && type2 == "bool" || type1 == "char" && type2 == "int" || type1 == "char" && type2 == "double"||
-		type1 == "int"  && type2 == "bool" || type1 == "int"  && type2 == "char"|| type1 == "int"  && type2 == "double" )
+	if (type1 == "bool" && type2 == "char" || type1 == "bool" && type2 == "int"   || type1 == "bool" && type2 == "double"||
+	    type1 == "char" && type2 == "int"  || type1 == "char" && type2 == "double"||
+	    type1 == "int"  && type2 == "double")
 	{
 		cout << "This is a safe conversion\n";
 	}
-	else if ( type1 == "bool"   && type2 == "bool" || type1 == "char" && type2 == "char" ||
-			  type1 == "int"    && type2 == "int"  || type1 == "double" && type2 == "double")
+	else if (type1 == "bool"   && type2 == "bool" || type1 == "char"   && type2 == "char" ||
+		 type1 == "int"    && type2 == "int"  || type1 == "double" && type2 == "double")
 	{
 		cout << "This is a not a conversion\n";
 	}
-	else
+	else if (type1 == "double" && type2 == "int" || type1 == "double" && type2 == "char" || type1 == "double" && type2 == "bool"||
+		 type1 == "int"	   && type2 == "char"|| type1 == "int"    && type2 == "bool" || 
+		 type1 == "char"   && type2 == "bool" )
 	{
 		cout << "this is an unsafe conversion\n";
 	}
